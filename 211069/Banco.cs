@@ -82,6 +82,18 @@ namespace _211069
                             "categoria char(20))", Conexao);
                 Comando.ExecuteNonQuery();
 
+                // Criando tabela clientes
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes " +
+                               "(id integer auto_increment primary key, " +
+                               "nome char(40), " +
+                               "idCidade integer," +
+                               "dataNasc date," +
+                               "renda decimal(10,2), " +
+                               "cpf char(14), " +
+                               "foto varchar(100), " +
+                               "venda boolean)", Conexao);
+                Comando.ExecuteNonQuery();
+
 
                 // Chama a função para fechar a conexão com o banco
                 FecharConexao();
