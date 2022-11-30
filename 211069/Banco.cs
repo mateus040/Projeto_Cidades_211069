@@ -94,6 +94,33 @@ namespace _211069
                                "venda boolean)", Conexao);
                 Comando.ExecuteNonQuery();
 
+                // Criando tabela Produtos
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " +
+                                "(Id integer auto_increment primary key, " +
+                                "descricao char(40), " +
+                                "idCategoria integer," +
+                                "idMarca integer," +
+                                "estoque decimal(10,3), " +
+                                "valorVenda decimal(10,2), " +
+                                "foto varchar(100))", Conexao);
+                Comando.ExecuteNonQuery();
+
+                // Criando tabela Vendas
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VendaCab " +
+                                            "(Id integer auto_increment primary key, " +
+                                            "idCliente int, " +
+                                            "date date," +
+                                            "total decimal(10,2))", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VendaDet " +
+                                            "(Id integer auto_increment primary key, " +
+                                            "idVendaCab int, " +
+                                            "idProduto int, " +
+                                            "qtde decimal(10,3)," +
+                                            "valorUnitario decimal(10,2))", Conexao);
+                Comando.ExecuteNonQuery();
+
 
                 // Chama a função para fechar a conexão com o banco
                 FecharConexao();
