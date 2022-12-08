@@ -41,5 +41,30 @@ namespace _211069
             FrmClientes form = new FrmClientes();
             form.Show();
         }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVendas form = new FrmVendas();
+            form.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProdutos form = new FrmProdutos();
+            form.Show();
+        }
+
+       /* private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaProd form = new FrmConsultaProd();
+            form.Show();
+        }
+
+       /* private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCaixa form = new FrmCaixa();
+            form.Show();
+        } 
+       */
     }
 }

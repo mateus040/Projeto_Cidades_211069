@@ -84,6 +84,8 @@ namespace _211069.Views
                 DataRowView reg = (DataRowView)cboMarca.SelectedItem;
                 //txtUF.Text = reg["uf"].ToString();
             }
+
+            // Não está puxando as categorias e marcas já cadastradas
         }
 
         private void picFoto_Click(object sender, EventArgs e)

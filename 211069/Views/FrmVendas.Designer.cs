@@ -409,6 +409,7 @@
             this.btnFechar.TabIndex = 51;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // label12
             // 
@@ -435,7 +436,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 719);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(990, 732);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnFechar);

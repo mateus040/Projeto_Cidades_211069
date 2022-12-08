@@ -168,6 +168,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FrmCaixa.resx">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>

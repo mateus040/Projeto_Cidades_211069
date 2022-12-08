@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -119,6 +120,17 @@ namespace _211069
                                             "idProduto int, " +
                                             "qtde decimal(10,3)," +
                                             "valorUnitario decimal(10,2))", Conexao);
+                Comando.ExecuteNonQuery();
+
+                // Criando tabela Caixa
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Caixa " +
+                                        "(Id integer auto_increment primary key, " +
+                                        "idVendaCab int, " +
+                                        "dinheiro decimal(10,2), " +
+                                        "pix decimal(10,2), " +
+                                        "cartao decimal(10,2), " +
+                                        "cheque decimal(10,2), " +
+                                        "boleto decimal(10,2))", Conexao);
                 Comando.ExecuteNonQuery();
 
 

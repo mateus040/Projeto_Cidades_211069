@@ -41,10 +41,10 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.dvgCidades = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCidades)).BeginInit();
             this.SuspendLayout();
@@ -182,22 +182,14 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
-            // label4
+            // dvgCidades
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(292, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Digite o nome da Cidade para Pesquisa:";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(24, 47);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(672, 20);
-            this.txtPesquisa.TabIndex = 16;
+            this.dvgCidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgCidades.Location = new System.Drawing.Point(24, 107);
+            this.dvgCidades.Name = "dvgCidades";
+            this.dvgCidades.Size = new System.Drawing.Size(814, 193);
+            this.dvgCidades.TabIndex = 17;
+            this.dvgCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCidades_CellClick);
             // 
             // btnPesquisar
             // 
@@ -211,19 +203,28 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // dvgCidades
+            // txtPesquisa
             // 
-            this.dvgCidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgCidades.Location = new System.Drawing.Point(24, 107);
-            this.dvgCidades.Name = "dvgCidades";
-            this.dvgCidades.Size = new System.Drawing.Size(814, 193);
-            this.dvgCidades.TabIndex = 17;
-            this.dvgCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCidades_CellClick);
+            this.txtPesquisa.Location = new System.Drawing.Point(24, 47);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(672, 20);
+            this.txtPesquisa.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(292, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Digite o nome da Cidade para Pesquisa:";
             // 
             // FrmCidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(910, 577);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);

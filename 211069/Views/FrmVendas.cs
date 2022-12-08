@@ -23,6 +23,16 @@ namespace _211069.Views
         public FrmVendas()
         {
             InitializeComponent();
+
+            /*FrmCaixa form =
+                new FrmCaixa(idVenda, //?
+                            (int)cboClientes.SelectedValue,
+                            total,
+                            cboClientes.Text);
+            form.ShowDialog();
+            btnCancelar.PerformClick();*/
+
+            // Precisa ser corrigido
         }
         
         void limpaProduto()
@@ -38,7 +48,7 @@ namespace _211069.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            dvgProdutos.RowCount = 0;
+            dvgProdutos.RowCount = 1;
             cboClientes.SelectedIndex = -1;
             txtCidade.Clear();
             txtUF.Clear();
@@ -180,6 +190,11 @@ namespace _211069.Views
             }
 
             btnCancelar.PerformClick();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
