@@ -99,5 +99,55 @@ namespace _211069.Views
                 // grbProdutos.Enabled = true;
             }
         }
+
+        private void cboProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProdutos.SelectedIndex != -1)
+            {
+                DataRowView reg = (DataRowView)cboProdutos.SelectedItem;
+                txtEstoque.Text = reg["estoque"].ToString();
+                txtPreco.Text = reg["valorVenda"].ToString();
+                txtMarca.Text = reg["Marca"].ToString();
+                txtCategoria.Text = reg["Categoria"].ToString();
+                picProduto.ImageLocation = reg["foto"].ToString();
+            }
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            double quantidade = double.Parse(txtQuantidade.Text);
+            double estoque = double.Parse(txtEstoque.Text);
+
+            if (quantidade > estoque)
+            {
+                MessageBox.Show("Estoque insuficiente", "Vendas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuantidade.SelectAll();
+                return;
+            }
+
+            dvgProdutos.Rows.Add(cboProdutos.SelectedValue, cboProdutos.Text,
+                                    txtQuantidade.Text, txtPreco.Text);
+
+            double preco = double.Parse(txtPreco.Text);
+
+            total += quantidade * preco;
+            lblTotal.Text = total.ToString("C");
+            limpaProduto();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (dvgProdutos.RowCount > 0)
+            {
+                double quantidade = double.Parse(dvgProdutos.CurrentRow.Cells[2].Value.ToString());
+                double preco = double.Parse(dvgProdutos.CurrentRow.Cells[3].Value.ToString());
+
+                total -= quantidade * preco;
+                lblTotal.Text = total.ToString("C");
+
+                dvgProdutos.Rows.RemoveAt(dvgProdutos.CurrentRow.Index);
+            }
+        }
     }
 }

@@ -248,6 +248,7 @@
             this.btnRemover.TabIndex = 56;
             this.btnRemover.Text = "Remover Produto";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnInserir
             // 
@@ -257,6 +258,7 @@
             this.btnInserir.TabIndex = 48;
             this.btnInserir.Text = "Inserir Produto";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtEstoque
             // 
@@ -359,6 +361,7 @@
             this.cboProdutos.Name = "cboProdutos";
             this.cboProdutos.Size = new System.Drawing.Size(538, 21);
             this.cboProdutos.TabIndex = 31;
+            this.cboProdutos.SelectedIndexChanged += new System.EventHandler(this.cboProdutos_SelectedIndexChanged);
             // 
             // label10
             // 
